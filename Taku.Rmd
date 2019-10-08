@@ -15,3 +15,5 @@ knitr::opts_chunk$set(echo = TRUE)
 *Taku B*
 
 *Taku C*
+
+Sometimes I daydream about drawing the Taku Range...Including Princess Peak, the Taku Towers, Little Matterhorn, and Shoehorn among others. 
