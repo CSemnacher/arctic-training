@@ -1,0 +1,17 @@
+---
+title: "Taku"
+author: "Cezanna"
+date: "10/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Mountains of Taku Glacier
+*Taku A*
+
+*Taku B*
+
+*Taku C*
