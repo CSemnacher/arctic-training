@@ -11,6 +11,8 @@ output:
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(DT)
+library(leaflet)
 
 ```
 
@@ -91,4 +93,19 @@ fig1
 ggsave("escapement.png", fig1, width = 12, height = 7, units = "in")
 ```
 
+# Map Sampling Locations
+
+Create a table with unique sampling lcoations, latitudes, and longitudes
+
+```{r}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na
+
+head(locations)
+```
+
+```{r}
+datatable(locations)
+```
 
