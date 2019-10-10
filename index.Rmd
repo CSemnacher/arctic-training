@@ -23,7 +23,7 @@ esc <- read.csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3
 annual_esc <- esc %>% 
   separate(sampleDate, c("Year", "Month", "Day"), sep = "-", remove = F)
 
-annual_esc
+head(annual_esc)
   
 ```
 
