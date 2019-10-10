@@ -78,12 +78,17 @@ ggplot(data = filter(annual_esc, SASAP.Region == "Kodiak"),
  
  Escapement over time: all regions
  
-```{r}
-ggplot(annual_esc, aes(x = Year, y = total_escapement, color = Species)) +
+```{r, fig.width = 7, fig.height = 12, echo = FALSE}
+fig1 <- ggplot(annual_esc, aes(x = Year, y = total_escapement, color = Species)) +
   geom_point() +
   geom_line () + 
   scale_color_brewer(palette = "BuPu" ) +
-  facet_wrap(~SASAP.Region, scales = "free_y")
+  facet_wrap(~SASAP.Region, scales = "free_y", ncol = 1) +
+  my_theme
+
+fig1
+
+ggsave("escapement.png", fig1, width = 12, height = 7, units = "in")
 ```
 
 
