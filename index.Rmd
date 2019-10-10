@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 library(dplyr)
 library(tidyr)
 library(ggplot2)
@@ -27,7 +27,10 @@ head(annual_esc)
   
 ```
 
-```{r}
+
+if you only want to show the plot and not the code, use {r, echo = FALSE}
+if you want to hide the results {r, results = "hide"}
+```{r, results = "hide"}
 species_list <- c("Chinook", "Sockeye", "Chum", "Pink", "Coho")
 
 annual_esc <- esc %>% 
@@ -45,9 +48,42 @@ head(annual_esc)
 # Visualize Escapement
 aes stands for aesthetics! this has to do with the structure of the plot, not the actual aesthetics of the plot. LOL. 
 
+
+Total Escapement by Region and Speciea
 ```{r}
 ggplot(data = annual_esc, mapping = aes(x = Species, y = total_escapement, fill = SASAP.Region)) + 
   geom_col()
+```
+
+
+
+Kodiak Escapement Over Time by Species
+```{r}
+
+my_theme <- theme_bw() +
+  theme(legend.position = "bottom")
+  
+  
+ggplot(data = filter(annual_esc, SASAP.Region == "Kodiak"),
+       mapping = aes(x = Year, y = total_escapement, color = Species)) +
+  geom_point() +
+  geom_line() +
+  scale_color_brewer(palette = "BuPu" ) +
+  ylab("Escapement (no. fish)") +
+  ggtitle( "Kodiak Salmon Escapement") +
+  my_theme
+
+
+```
+ 
+ Escapement over time: all regions
+ 
+```{r}
+ggplot(annual_esc, aes(x = Year, y = total_escapement, color = Species)) +
+  geom_point() +
+  geom_line () + 
+  scale_color_brewer(palette = "BuPu" ) +
+  facet_wrap(~SASAP.Region, scales = "free_y")
 ```
 
 

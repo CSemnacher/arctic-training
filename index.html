@@ -370,16 +370,8 @@ summary {
 </div>
 
 
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: 'dplyr'</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(tidyr)
+<pre class="r"><code>library(dplyr)
+library(tidyr)
 library(ggplot2)</code></pre>
 <pre class="r"><code>esc &lt;- read.csv(&quot;https://knb.ecoinformatics.org/knb/d1/mn/v2/object/urn%3Auuid%3Af119a05b-bbe7-4aea-93c6-85434dcb1c5e&quot;, stringsAsFactors = F)</code></pre>
 <pre class="r"><code>annual_esc &lt;- esc %&gt;% 
@@ -400,6 +392,7 @@ head(annual_esc)</code></pre>
 ## 4 Unknown  57.1641 -154.2287   ADFG
 ## 5 Unknown  57.1641 -154.2287   ADFG
 ## 6 Unknown  57.1641 -154.2287   ADFG</code></pre>
+<p>if you only want to show the plot and not the code, use {r, echo = FALSE} if you want to hide the results {r, results = “hide”}</p>
 <pre class="r"><code>species_list &lt;- c(&quot;Chinook&quot;, &quot;Sockeye&quot;, &quot;Chum&quot;, &quot;Pink&quot;, &quot;Coho&quot;)
 
 annual_esc &lt;- esc %&gt;% 
