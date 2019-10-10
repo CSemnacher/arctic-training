@@ -1,0 +1,71 @@
+---
+title: "Funk Shins"
+author: "Cezanna"
+date: "10/10/2019"
+output: html_document
+---
+
+```{r}
+library(roxygen2)
+
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#Functions
+
+D.R.Y (Don't Repeat Yourself) - Encapsulating repeating procedures as functions and stuff
+
+#Create some data for examples
+
+```{r}
+
+airtemps <- c(212, 30.3, 75, 32)
+airetemp_1 <- (airtemps[1]-32)*5/9
+airtemp_2 <- (airtemps[2]-32)*5/9
+airtemp_3 <- (airtemps[3]-32)*5/9
+airtemp_4 <- (airtemps[4]-32)*5/9
+```
+
+# Write a function for F to Celsius conversion
+
+```{r}
+
+ #' Convert from Fahrenheit to Celsius
+ #'
+ #' A much more detailed explanation of how the function works
+ #' @param fahr represents a numberic input in degrees Fahrenheit
+ #' @return the temperature in Celsous
+ #' @export
+ #' @example f_to_c(212)
+ 
+
+f_to_c <- function(fahr) {
+  celsius <- (fahr-32)*5/9
+  return(celsius)
+}
+
+celsius1 <- f_to_c(airtemps)
+celsius1 == airetemp_1
+
+celsius <- f_to_c(airtemps)
+celsius
+```
+
+# Write the inverse function for C to F
+
+```{r}
+c_to_f = function(cels) {
+  fahrenheit <- (cels)*(9/5)+32
+  return(fahrenheit)
+}
+
+fahrenheit1 <- c_to_f(airtemps)
+
+fahrenheit1
+
+c_to_f(-40)
+```
+
