@@ -82,7 +82,7 @@ ggplot(data = filter(annual_esc, SASAP.Region == "Kodiak"),
 fig1 <- ggplot(annual_esc, aes(x = Year, y = total_escapement, color = Species)) +
   geom_point() +
   geom_line () + 
-  scale_color_brewer(palette = "BrBG" ) +
+  scale_color_brewer(palette = "RdPu" ) +
   facet_wrap(~SASAP.Region, scales = "free_y", ncol = 1) +
   my_theme
 
